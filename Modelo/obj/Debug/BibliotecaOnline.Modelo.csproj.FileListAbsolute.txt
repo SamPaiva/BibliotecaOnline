@@ -1,0 +1,6 @@
+C:\Projetos_VS\BibliotecaOnline\Modelo\bin\Debug\Modelo.dll
+C:\Projetos_VS\BibliotecaOnline\Modelo\bin\Debug\Modelo.pdb
+C:\Projetos_VS\BibliotecaOnline\Modelo\obj\Debug\BibliotecaOnline.Modelo.csproj.CoreCompileInputs.cache
+C:\Projetos_VS\BibliotecaOnline\Modelo\obj\Debug\Modelo.dll
+C:\Projetos_VS\BibliotecaOnline\Modelo\obj\Debug\Modelo.pdb
+C:\Projetos_VS\BibliotecaOnline\Modelo\obj\Debug\BibliotecaOnline.Modelo.csprojAssemblyReference.cache

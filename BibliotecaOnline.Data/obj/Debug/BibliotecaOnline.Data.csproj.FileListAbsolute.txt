@@ -1,0 +1,17 @@
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csprojAssemblyReference.cache
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.CoreCompileInputs.cache
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\BibliotecaOnline.Data.dll.config
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\BibliotecaOnline.Data.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\BibliotecaOnline.Data.pdb
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\Modelo.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\Modelo.pdb
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.CopyComplete
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.pdb
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Initial_Create.resources
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.GenerateResource.cache
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Image_Upload.resources
