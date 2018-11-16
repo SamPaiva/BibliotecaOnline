@@ -1,0 +1,26 @@
+﻿@model Modelo.Modelo.Livro
+
+@{
+    ViewBag.Title = "Detalhes do Livro";
+}
+
+
+<div class="card" style="width: 18rem;">
+    @if (Model.Imagem != null)
+    {
+        {
+            var base64 = Convert.ToBase64String(Model.Imagem);
+            var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
+            <img class="card-img-top" src="@imgSrc" alt="Card image cap">
+        }
+    }
+            <div class="card-body">
+                <h3>@Model.Titulo</h3>
+                <p class="card-text">@Model.Autor</p>
+                <p class="card-text">@Model.Sinopse</p>
+                <p class="card-text">@Model.Genero</p>
+                <p class="card-text">@Model.DataLancamento</p>
+                @Html.ActionLink("Voltar", "ListarLivros", null, new { @class = "btn btn-outline-dark" })
+            </div>
+</div>
+

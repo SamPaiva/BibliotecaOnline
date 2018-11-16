@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Modelo\Livro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ILivroRepository.cs" />
     <Compile Include="ViewModels\LivroViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

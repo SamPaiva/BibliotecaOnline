@@ -28,8 +28,8 @@ namespace BibliotecaOnline.Data.DAL
 
         public void EditarLivro(Livro livro)
         {
-            db.Entry(livro).State = EntityState.Modified;
-            db.SaveChanges();
+            
+           
         }
 
         public Livro DeletarLivro(long id)

@@ -1,47 +1,33 @@
 ﻿@model IEnumerable<Modelo.Modelo.Livro>
 
 @{
-    ViewBag.Title = "ListarLivros";
+                /**/
+
+                ViewBag.Title = "ListarLivros";
 }
 
 <div class="card">
-    <div class="card-body">
-        <h3 class="text-center">Lista de Livros</h3>
+    <div class="card-body bg-dark">
+        <h3 class="text-center" style="color:greenyellow">Lista de Livros</h3>
     </div>
 </div>
-
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Titulo)</th>
-            <th>@Html.DisplayNameFor(model => model.Genero)</th>
-            <th>@Html.DisplayNameFor(model => model.DataLancamento)</th>
-            <th>@Html.DisplayNameFor(model => model.Sinopse)</th>
-            <th>@Html.DisplayNameFor(model => model.Autor)</th>
-            <th>@Html.DisplayNameFor(model => model.Imagem)</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var item in Model)
+<div class="row">
+        @foreach (var item in Model)
         {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Titulo)</td>
-            <td>@Html.DisplayFor(modelItem => item.Genero)</td>
-            <td>@Html.DisplayFor(modelItem => item.DataLancamento)</td>
-            <td>@Html.DisplayFor(modelItem => item.Sinopse)</td>
-            <td>@Html.DisplayFor(modelItem => item.Autor)</td>
-            @if (item.Imagem != null)
-            {
-                <td>
-                    @{ 
+            <div class="card col-sm-3" style="width: 18rem;">
+                @if (item.Imagem != null)
+                {
+                    {
                         var base64 = Convert.ToBase64String(item.Imagem);
                         var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
+                        <img class="card-img-top" src="@imgSrc" alt="Card image cap">
                     }
-                    <img src="@imgSrc" style="max-width:100px; max-height:100px;" />
-                </td>
-            }
-        </tr>
+                }
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Titulo</h5>
+                            @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId}, new { @class = "btn btn-info btn-sm" })
+                            @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId}, new { @class = "btn btn-dark btn-sm" })
+                        </div>
+            </div>
         }
-    </tbody>
-</table>
-
+    </div>
