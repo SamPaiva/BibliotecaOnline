@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Modelo.Modelo.Livro>
 
 @{
-                /**/
 
-                ViewBag.Title = "ListarLivros";
+    ViewBag.Title = "ListarLivros";
 }
+
 
 <div class="card">
     <div class="card-body bg-dark">
@@ -12,22 +12,26 @@
     </div>
 </div>
 <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="card col-sm-3" style="width: 18rem;">
-                @if (item.Imagem != null)
+    @foreach (var item in Model)
+    {
+        <div class="card col-sm-3" style="width: 18rem;">
+            @if (item.Imagem != null)
+            {
                 {
-                    {
-                        var base64 = Convert.ToBase64String(item.Imagem);
-                        var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
-                        <img class="card-img-top" src="@imgSrc" alt="Card image cap">
-                    }
+                    var base64 = Convert.ToBase64String(item.Imagem);
+                    var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
+                    <img class="card-img-top" src="@imgSrc" alt="Card image cap">
                 }
-                        <div class="card-body">
-                            <h5 class="card-title">@item.Titulo</h5>
-                            @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId}, new { @class = "btn btn-info btn-sm" })
-                            @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId}, new { @class = "btn btn-dark btn-sm" })
-                        </div>
+            }
+            <div class="card-body">
+                <h5 class="card-title">@item.Titulo</h5>
+                @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm" })
+                @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId}, new { @class = "btn btn-warning btn-sm"})
             </div>
-        }
-    </div>
+        </div>
+    }
+</div>
+
+
+    
+

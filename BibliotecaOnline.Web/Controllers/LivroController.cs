@@ -164,6 +164,7 @@ namespace BibliotecaOnline.Web.Controllers
         public ActionResult DeletarLivro(long id)
         {
             _livroRepository.DeletarLivro(id);
+            _livroRepository.Salvar();
             return RedirectToAction("ListarLivros");
         }
 

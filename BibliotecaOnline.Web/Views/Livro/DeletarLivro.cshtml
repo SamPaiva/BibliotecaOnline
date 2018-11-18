@@ -1,0 +1,56 @@
+﻿@model Modelo.Modelo.Livro
+
+@{
+    ViewBag.Title = "Deletar Livro";
+}
+
+<div class="card" style="width:18rem;">
+    <div class="card-body">
+        @if (Model.Imagem != null)
+        {
+            {
+                var base64 = Convert.ToBase64String(Model.Imagem);
+                var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
+                <img class="card-img-top" src="@imgSrc" alt="Card image cap">
+            }
+        }
+        <h3>@Model.Titulo</h3>
+        <p class="card-text">@Model.Autor</p>
+        <p class="card-text">@Model.Sinopse</p>
+        <p class="card-text">@Model.Genero</p>
+        <p class="card-text">@Model.DataLancamento</p>
+        <a href="#" data-toggle="modal" class="btn btn-outline-danger" data-target="#modal">Remover</a>
+        @Html.ActionLink("Voltar", "ListarLivros", null, new { @class = "btn btn-outline-dark" })
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Model.Titulo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Não será possível desfazer as alterações o livro <strong>@Model.Titulo</strong> for excluído.</p>
+            </div>
+
+            @using (Html.BeginForm("DeletarLivro", "Livro", FormMethod.Post, new { @id = "delete-form", role = "form" }))
+            {
+                Html.AntiForgeryToken();
+                Html.HiddenFor(m => m.LivroId);
+            }
+
+            <div class="modal-footer">
+                <button type="submit" onclick="$('#delete-form').submit();" class="btn btn-primary">Deletar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
