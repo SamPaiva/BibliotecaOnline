@@ -22,9 +22,23 @@ namespace BibliotecaOnline.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new StyleBundle("~/bundles/toastr").Include(
+                      "~/Scripts/toastr.js"
+                      ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/livros.css",
+                      "~/Content/font-awesome.css"
+                      ));
+
+            bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
+                      "~/Content/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/Content/toastr").Include(
+                       "~/Content/toastr.css",
+                       "~/Content/toastr.less"));
         }
     }
 }

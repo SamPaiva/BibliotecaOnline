@@ -66,6 +66,7 @@ namespace BibliotecaOnline.Web.Controllers
 
                 _livroRepository.GravarLivro(livro);
                 _livroRepository.Salvar();
+                TempData["gravar"] = "Livro Adicionaddo com sucesso";
                 return RedirectToAction("ListarLivros");
             }
 
@@ -110,6 +111,7 @@ namespace BibliotecaOnline.Web.Controllers
 
                 _livroRepository.AtualizarLivro(livro);
                 _livroRepository.Salvar();
+                TempData["editar"] = "Livro Editado com Sucesso";
                 return RedirectToAction("ListarLivros");
 
             }
@@ -165,6 +167,7 @@ namespace BibliotecaOnline.Web.Controllers
         {
             _livroRepository.DeletarLivro(id);
             _livroRepository.Salvar();
+            TempData["deletar"] = "Livro Deletado com Sucesso";
             return RedirectToAction("ListarLivros");
         }
 

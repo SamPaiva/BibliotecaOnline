@@ -1,37 +1,68 @@
 ﻿@model IEnumerable<Modelo.Modelo.Livro>
 
 @{
-
-    ViewBag.Title = "ListarLivros";
+    ViewBag.Title = "Listar Livros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="card">
-    <div class="card-body bg-dark">
-        <h3 class="text-center" style="color:greenyellow">Lista de Livros</h3>
+    <div class="card-body bg-light">
+        <h3 class="text-center">Lista de Livros</h3>
+        <div class="row">
+            <div class="col-4">
+                @Html.ActionLink("Adicionar Livro", "GravarLivro", null, new { @class = "btn btn-light fa fa-plus-square", @value = "Adicionar Livro" })
+            </div>
+        </div>
     </div>
 </div>
-<div class="row">
+<div class="row" id="row col-12">
     @foreach (var item in Model)
     {
-        <div class="card col-sm-3" style="width: 18rem;">
+        <div class="card col-md-3" style="width: 18rem;">
             @if (item.Imagem != null)
             {
                 {
                     var base64 = Convert.ToBase64String(item.Imagem);
                     var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
-                    <img class="card-img-top" src="@imgSrc" alt="Card image cap">
+                    <img id="imagem" class="card-img-top" src="@imgSrc" alt="Card image cap">
                 }
             }
             <div class="card-body">
-                <h5 class="card-title">@item.Titulo</h5>
-                @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm" })
-                @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId}, new { @class = "btn btn-warning btn-sm"})
+                <h4 class="card-title">@item.Titulo</h4>
+                <h5 class="card-title">Gênero: @item.Genero</h5>
+                <hr />
+                <div class="col-8">
+                    @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm", @id = "livro" })
+                    @Html.ActionLink("Editar", "EditarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-primary btn-sm", @id = "livro" })
+                    @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-dark btn-sm", @id = "livro" })
+                </div>
             </div>
         </div>
     }
 </div>
 
+@section scripts{
+    @if (TempData["gravar"] != null)
+    {
+        <script type="text/javascript">
+            toastr.success("@TempData["gravar"]");
+        </script>
+    }
 
-    
+    @if (TempData["editar"] != null)
+    {
+        <script type="text/javascript">
+            toastr.info("@TempData["editar"]");
+        </script>
+    }
+
+    @if (TempData["deletar"] != null)
+    {
+        <script type="text/javascript">
+            toastr.warning("@TempData["deletar"]");
+        </script>
+    }
+}
+
 
