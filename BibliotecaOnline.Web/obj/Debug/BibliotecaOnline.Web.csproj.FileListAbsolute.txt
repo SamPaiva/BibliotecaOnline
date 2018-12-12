@@ -98,3 +98,12 @@ C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\BibliotecaOnline.Data.d
 C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Modelo.pdb
 C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\EntityFramework.xml
 C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\EntityFramework.SqlServer.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Security.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Owin.dll
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Security.xml
+C:\Projetos_VS\BibliotecaOnline\BibliotecaOnline.Web\bin\Microsoft.Owin.Security.Cookies.xml

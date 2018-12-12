@@ -17,14 +17,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            @*<div class="navbar-nav">
-                    <a class="nav-item nav-link active"></a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
-                </div>*@
+            <div class="navbar-nav">
+                @if (User.Identity.IsAuthenticated == true)
+                {
+                    <a class="nav-item nav-link active">Bem vindo @User.Identity.Name!</a>
+                    <a class="nav-item nav-link" href="#">Meus Livros</a>
+                    <a class="nav-item nav-link" href="@Url.Action("Logout", "Auth")">Sair</a>
+                }
+
+            </div>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
