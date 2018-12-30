@@ -16,6 +16,7 @@ namespace BibliotecaOnline.Data.Migrations
                         Sinopse = c.String(maxLength: 700),
                         Autor = c.String(maxLength: 150),
                         Genero = c.String(maxLength: 150),
+                        Imagem = c.Binary(),
                         DataLancamento = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.LivroId);

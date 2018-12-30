@@ -50,13 +50,9 @@
     <Compile Include="Context\BibliotecaContext.cs" />
     <Compile Include="DAL\LivroDAL.cs" />
     <Compile Include="Mapping\LivroMap.cs" />
-    <Compile Include="Migrations\201811101758361_Initial_Create.cs" />
-    <Compile Include="Migrations\201811101758361_Initial_Create.Designer.cs">
-      <DependentUpon>201811101758361_Initial_Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811122218016_Image_Upload.cs" />
-    <Compile Include="Migrations\201811122218016_Image_Upload.Designer.cs">
-      <DependentUpon>201811122218016_Image_Upload.cs</DependentUpon>
+    <Compile Include="Migrations\201812292259159_Initial_Create.cs" />
+    <Compile Include="Migrations\201812292259159_Initial_Create.Designer.cs">
+      <DependentUpon>201812292259159_Initial_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,13 +69,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811101758361_Initial_Create.resx">
-      <DependentUpon>201811101758361_Initial_Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811122218016_Image_Upload.resx">
-      <DependentUpon>201811122218016_Image_Upload.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812292259159_Initial_Create.resx">
+      <DependentUpon>201812292259159_Initial_Create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

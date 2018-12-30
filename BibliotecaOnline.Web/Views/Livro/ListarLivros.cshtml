@@ -5,45 +5,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<main role="main">
 
-<div class="card">
-    <div class="card-body bg-light">
-        <h3 class="text-center">Lista de Livros</h3>
+    <div class="col-12 fadeIn" id="col12">
+
+        <h1 id="h1">Começe a Baixar os livros</h1>
+        <h2>Crie sua conta e Baixe os livros totalmente gratuitos</h2>
+
+    </div>
+
+    <div class="col-md-12" style="opacity: 0.8; margin-top:15px;">
         <div class="row">
-            <div class="col-4">
-                @Html.ActionLink("Adicionar Livro", "GravarLivro", null, new { @class = "btn btn-light fa fa-plus-square", @value = "Adicionar Livro" })
-            </div>
+            @Html.ActionLink("Adicionar Livro", "GravarLivro", null, new { @class = "btn btn-dark fa fa-plus-square", @value = "Adicionar Livro" })
+            <input type="text" class="input-search form-control" alt="lista-livros" placeholder="Busca" />
         </div>
     </div>
-</div>
 
-<div class="row" id="row col-12">
-    @foreach (var item in Model)
-    {
-        <div class="card col-md-3" style="width: 18rem;">
-            @if (item.Imagem != null)
-            {
+    <div class="row fadeIn" id="cardbook">
+        @foreach (var item in Model)
+        {
+            <div class="card col-md-2" style="width: 15rem; margin-left: 10px;">
+                @if (item.Imagem != null)
                 {
-                    var base64 = Convert.ToBase64String(item.Imagem);
-                    var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
-                    <img id="imagem" class="card-img-top" src="@imgSrc" alt="Card image cap">
+                    {
+                        var base64 = Convert.ToBase64String(item.Imagem);
+                        var imgSrc = String.Format("data:image/gif;base64, {0}", base64);
+                        <img id="imagem" class="card-img-top" src="@imgSrc" alt="Card image cap">
+                    }
                 }
-            }
-            <div class="card-body">
-                <h4 class="card-title">@item.Titulo</h4>
-                <h5 class="card-title">Gênero: @item.Genero</h5>
-                <hr />
-                <div class="col-8">
-                    @Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm", @id = "livro" })
-                    @Html.ActionLink("Editar", "EditarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-primary btn-sm", @id = "livro" })
-                    @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-dark btn-sm", @id = "livro" })
+                <div class="card-body">
+                    <h6 class="card-title">@item.Titulo</h6>
+                    <div class="col-2">
+                        @*@Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm", @id = "livro" })*@
+                        @Html.ActionLink("Editar", "EditarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-primary btn-sm", @id = "livro" })
+                        @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-dark btn-sm", @id = "livro" })
+                    </div>
                 </div>
-            </div>
-        </div>
-    }
-</div>
 
+            </div>
+        }
+    </div>
+
+</main>
 @section scripts{
+
     @if (TempData["gravar"] != null)
     {
         <script type="text/javascript">
@@ -64,6 +69,18 @@
             toastr.warning("@TempData["deletar"]");
         </script>
     }
+
+    <script>
+        $(document).ready(function () {
+            $(".input-search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".card-body h6").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
 }
 
 

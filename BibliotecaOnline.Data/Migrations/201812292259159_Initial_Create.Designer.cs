@@ -7,13 +7,13 @@ namespace BibliotecaOnline.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Image_Upload : IMigrationMetadata
+    public sealed partial class Initial_Create : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Image_Upload));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial_Create));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811122218016_Image_Upload"; }
+            get { return "201812292259159_Initial_Create"; }
         }
         
         string IMigrationMetadata.Source

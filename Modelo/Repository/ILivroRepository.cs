@@ -12,5 +12,6 @@ namespace Modelo.Repository
         void AtualizarLivro(Livro livro);
         void DeletarLivro(long id);
         void Salvar();
+        
     }
 }
