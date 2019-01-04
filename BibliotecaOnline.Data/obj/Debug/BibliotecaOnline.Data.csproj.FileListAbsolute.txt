@@ -31,3 +31,4 @@ C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.D
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.pdb
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Initial_Create.resources
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.GenerateResource.cache
+C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Adicionando_Pdf.resources

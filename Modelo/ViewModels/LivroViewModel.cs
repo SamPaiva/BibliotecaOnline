@@ -22,6 +22,10 @@ namespace BibliotecaOnline.Modelo.ViewModels
         [Display(Name ="Imagem")]
         public HttpPostedFileBase ImageUpload { get; set; }
 
+        [DataType(DataType.Upload)]
+        [Display(Name ="Arquivo PDF")]
+        public HttpPostedFileBase Pdf { get; set; }
+
         [Display(Name = "Data de Lançamento")]
         public DateTime DataLancamento { get; set; }
     }

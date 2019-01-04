@@ -56,10 +56,18 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.ImageUpload, new { @class = "col-form-label col-sm-2"})
+                @Html.LabelFor(model => model.ImageUpload, new { @class = "col-form-label col-sm-2" })
                 <div class="col-lg-4">
-                    @Html.TextBoxFor(model => model.ImageUpload, new { type = "file", @class = "form-control"})
-                    @Html.ValidationMessageFor(model => model.ImageUpload, "", new { @class = "text-danger"})
+                    @Html.TextBoxFor(model => model.ImageUpload, new { type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ImageUpload, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Pdf, new { @class = "col-form-label col-sm-2" })
+                <div class="col-lg-4">
+                    @Html.TextBoxFor(model => model.Pdf, new { type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Pdf, "", new { @class = "text-danger" })
                 </div>
             </div>
 

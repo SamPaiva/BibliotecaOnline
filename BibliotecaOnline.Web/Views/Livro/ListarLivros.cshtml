@@ -39,6 +39,7 @@
                         @*@Html.ActionLink("Detalhes", "DetalhesLivro", null, new { id = item.LivroId }, new { @class = "btn btn-info btn-sm", @id = "livro" })*@
                         @Html.ActionLink("Editar", "EditarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-primary btn-sm", @id = "livro" })
                         @Html.ActionLink("Deletar", "DeletarLivro", null, new { id = item.LivroId }, new { @class = "btn btn-dark btn-sm", @id = "livro" })
+                        @Html.ActionLink("Download", "DownloadFile", null, new { id = item.LivroId }, new { @class = "fa fa-download btn btn-default btn-sm", @id = "livro" })
                     </div>
                 </div>
 

@@ -3,6 +3,7 @@ using BibliotecaOnline.Data.Repository;
 using BibliotecaOnline.Modelo.ViewModels;
 using Modelo.Modelo;
 using Modelo.Repository;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,11 @@ using System.Web.Mvc;
 
 namespace BibliotecaOnline.Web.Controllers
 {
+
     public class LivroController : Controller
     {
         private ILivroRepository _livroRepository;
+        private BibliotecaContext db = new BibliotecaContext();
 
         public LivroController()
         {
@@ -43,6 +46,11 @@ namespace BibliotecaOnline.Web.Controllers
                 "image/png"
             };
 
+            var pdf = new string[]
+            {
+                "application/pdf"
+            };
+
             if (model.ImageUpload == null || model.ImageUpload.ContentLength == 0)
             {
                 ModelState.AddModelError("ImageUpload", "Este campo é obrigatório");
@@ -52,9 +60,10 @@ namespace BibliotecaOnline.Web.Controllers
                 ModelState.AddModelError("ImageUpload", "Escolha uma imagem GIF, JPG ou PNG");
             }
 
+
             if (ModelState.IsValid)
             {
-                var livro = new Livro();
+                Livro livro = new Livro();
                 livro.Titulo = model.Titulo;
                 livro.Autor = model.Autor;
                 livro.DataLancamento = model.DataLancamento;
@@ -63,8 +72,11 @@ namespace BibliotecaOnline.Web.Controllers
 
                 using (var binaryReader = new BinaryReader(model.ImageUpload.InputStream))
                     livro.Imagem = binaryReader.ReadBytes(model.ImageUpload.ContentLength);
+                using (var pdfReader = new BinaryReader(model.Pdf.InputStream))
+                    livro.ConteudoAnexo = pdfReader.ReadBytes(model.Pdf.ContentLength);
 
-                _livroRepository.GravarLivro(livro);
+
+                    _livroRepository.GravarLivro(livro);
                 _livroRepository.Salvar();
                 TempData["gravar"] = "Livro Adicionaddo com sucesso";
                 return RedirectToAction("ListarLivros");
@@ -173,5 +185,22 @@ namespace BibliotecaOnline.Web.Controllers
 
         #endregion
 
+        public FileResult DownloadFile(int id)
+        {
+            Livro livro = new Livro();
+            livro = db.Livros.Where(c => c.LivroId == id).FirstOrDefault();
+            var pdf = livro.ConteudoAnexo;
+
+            MemoryStream ms = new MemoryStream(pdf, 0, 0, true, true);
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=" + livro.Titulo);
+            Response.Buffer = true;
+            Response.Clear();
+            Response.OutputStream.Write(ms.GetBuffer(), 0, ms.GetBuffer().Length);
+            Response.OutputStream.Flush();
+            Response.End();
+
+            return File(Response.OutputStream, "application/pdf");
+        }
     }
 }

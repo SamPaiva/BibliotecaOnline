@@ -10,6 +10,7 @@ namespace Modelo.Modelo
         public string Autor { get; set; }
         public string Genero { get; set; }
         public byte[] Imagem { get; set; }
+        public byte[] ConteudoAnexo { get; set; }
         public DateTime DataLancamento { get; set; }
     }
 }
