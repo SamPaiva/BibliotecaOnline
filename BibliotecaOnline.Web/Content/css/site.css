@@ -4,11 +4,23 @@
     background-image: url(/Content/Imagem/Fundo.jpg);
     background-size:cover;
     background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important
 }
 
-body-content{
-    margin-left:15px;
-    margin-right:15px;
+.navbar {
+    background-color: transparent !important;
+    background-image: none !important;
+    margin-bottom: 50px;
+    position:relative;
+}
+
+.active:hover {
+    border-bottom: 3px solid #ADD8E6;
+}
+
+body-content {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

@@ -7,19 +7,27 @@
 
 <main role="main">
 
-    <div class="col-12 fadeIn" id="col12">
+    <div class="col-12 fadeIn" style="margin-bottom:20px;" id="col12">
 
-        <h1 id="h1">Começe a Baixar os livros</h1>
+        <h1>Começe a Baixar os livros</h1>
         <h2>Crie sua conta e Baixe os livros totalmente gratuitos</h2>
+        <h3>Compartilhe seus livros</h3>
 
     </div>
+    @using (Html.BeginForm())
+    {
+        <div class="row col-6">
+            @Html.TextBox("Busca", null, new { @class = "form-control", @placeholder="Busque um Título" })
+            <button type="submit" style="margin-left: 10px;" class="btn btn-info fa fa-search"></button>
+        </div>
+    }
 
     <div class="col-md-12" style="opacity: 0.8; margin-top:15px;">
         <div class="row">
             @Html.ActionLink("Adicionar Livro", "GravarLivro", null, new { @class = "btn btn-dark fa fa-plus-square", @value = "Adicionar Livro" })
-            <input type="text" class="input-search form-control" alt="lista-livros" placeholder="Busca" />
         </div>
     </div>
+
 
     <div class="row fadeIn" id="cardbook">
         @foreach (var item in Model)
@@ -70,17 +78,6 @@
             toastr.warning("@TempData["deletar"]");
         </script>
     }
-
-    <script>
-        $(document).ready(function () {
-            $(".input-search").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $(".card-body h6").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 
 }
 

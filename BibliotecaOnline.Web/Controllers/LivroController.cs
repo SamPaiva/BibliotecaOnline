@@ -3,7 +3,7 @@ using BibliotecaOnline.Data.Repository;
 using BibliotecaOnline.Modelo.ViewModels;
 using Modelo.Modelo;
 using Modelo.Repository;
-using System.Collections.Generic;
+using System;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -22,10 +22,19 @@ namespace BibliotecaOnline.Web.Controllers
             this._livroRepository = new LivroRepository(new BibliotecaContext());
         }
 
-        public ActionResult ListarLivros()
+        public ActionResult ListarLivros(string busca)
         {
             var livros = _livroRepository.GetLivros();
-            return View(livros);
+
+            var livrosFiltro = from s in db.Livros
+                               select s;
+            if (!String.IsNullOrEmpty(busca))
+            {
+                livrosFiltro = db.Livros.Where(s => s.Titulo.Contains(busca));
+            }
+
+            return View(livrosFiltro.ToList());
+
         }
 
         #region - Gravar Livro
@@ -76,7 +85,7 @@ namespace BibliotecaOnline.Web.Controllers
                     livro.ConteudoAnexo = pdfReader.ReadBytes(model.Pdf.ContentLength);
 
 
-                    _livroRepository.GravarLivro(livro);
+                _livroRepository.GravarLivro(livro);
                 _livroRepository.Salvar();
                 TempData["gravar"] = "Livro Adicionaddo com sucesso";
                 return RedirectToAction("ListarLivros");

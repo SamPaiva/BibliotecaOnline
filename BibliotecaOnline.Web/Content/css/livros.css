@@ -1,8 +1,9 @@
-﻿/*.card {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 220px;
-}*/
+﻿.card:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+
+}
 
 .jumbotron {
     background: url(/Content/Imagem/Background.jpg) center center;
@@ -11,30 +12,18 @@
     height:150%
 }
 
-h1, h2{
+h1, h2, h3{
     color:white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
       
 }
 
 
-/*#rowbox {
-    flex-wrap: wrap;
-    margin-right: 0;
-    margin-left: 0;
-    display:contents
-}*/
-
-/*.container {
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-}*/
-
 #livro {
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
 
 .modal-dialog{
     margin-top: 100px;
