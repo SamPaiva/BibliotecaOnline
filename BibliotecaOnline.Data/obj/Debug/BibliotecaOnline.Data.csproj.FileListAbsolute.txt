@@ -25,10 +25,10 @@ C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\Modelo.pdb
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.xml
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csprojAssemblyReference.cache
+C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Initial_Create.resources
+C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Adicionando_Pdf.resources
+C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.GenerateResource.cache
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.CoreCompileInputs.cache
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.CopyComplete
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.dll
 C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.pdb
-C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Initial_Create.resources
-C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.csproj.GenerateResource.cache
-C:\Workspace\BibliotecaOnline\BibliotecaOnline.Data\obj\Debug\BibliotecaOnline.Data.Migrations.Adicionando_Pdf.resources

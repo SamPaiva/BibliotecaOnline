@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using X.PagedList;
 
 namespace BibliotecaOnline.Web.Controllers
 {
@@ -22,20 +23,36 @@ namespace BibliotecaOnline.Web.Controllers
             this._livroRepository = new LivroRepository(new BibliotecaContext());
         }
 
-        public ActionResult ListarLivros(string busca)
+        public ActionResult ListarLivros(string busca, string currentFilter, int pagina = 1 )
         {
             var livros = _livroRepository.GetLivros();
+
+            if (busca != null)
+            {
+                pagina = 1;
+            }
+            else
+            {
+                busca = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = busca;
 
             var livrosFiltro = from s in db.Livros
                                select s;
             if (!String.IsNullOrEmpty(busca))
             {
                 livrosFiltro = db.Livros.Where(s => s.Titulo.Contains(busca));
+                return View(livrosFiltro);
             }
 
-            return View(livrosFiltro.ToList());
+            int pageSize = 10;
+            var livrosPaginados = db.Livros.OrderBy(c => c.Titulo).ToPagedList(pagina, pageSize);
 
+            return View(livrosPaginados);
+            
         }
+
 
         #region - Gravar Livro
         public ActionResult GravarLivro()

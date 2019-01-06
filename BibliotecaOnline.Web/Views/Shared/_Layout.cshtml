@@ -22,9 +22,9 @@
                 <div class="navbar-nav ml-auto">
                     @if (User.Identity.IsAuthenticated == true)
                     {
-                        <a class="nav-item nav-link" style="color:white">Bem vindo @User.Identity.Name!</a>
-                        <a class="nav-item nav-link active" href="#">Meus Livros</a>
-                        <a class="nav-item nav-link active" href="@Url.Action("Logout", "Auth")">Sair</a>
+                        <h5 class="nav-item nav-link">Bem vindo @User.Identity.Name!</h5>
+                        <h6 class="nav-item nav-link active" href="#">Meus Livros</h6>
+                        <h6 class="nav-item nav-link active" href="@Url.Action("Logout", "Auth")">Sair</h6>
                     }
 
                 </div>

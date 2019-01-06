@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Modelo.Modelo.Livro>
+﻿@model X.PagedList.PagedList<Modelo.Modelo.Livro>
+@using X.PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Listar Livros";
@@ -14,10 +16,11 @@
         <h3>Compartilhe seus livros</h3>
 
     </div>
+
     @using (Html.BeginForm())
     {
         <div class="row col-6">
-            @Html.TextBox("Busca", null, new { @class = "form-control", @placeholder="Busque um Título" })
+            @Html.TextBox("Busca", null, new { @class = "form-control", @placeholder = "Busque um Título" })
             <button type="submit" style="margin-left: 10px;" class="btn btn-info fa fa-search"></button>
         </div>
     }
@@ -54,7 +57,12 @@
             </div>
         }
     </div>
-
+    <div class="col-md-12 text-center" style="margin-top:40px;">
+        @Html.PagedListPager(Model, pagina => Url.Action("ListarLivros", new { pagina }))
+        <h6 style="color:white">
+            Exibindo @Model.LastItemOnPage Livros de um total de @Model.TotalItemCount
+        </h6>
+    </div>
 </main>
 @section scripts{
 
@@ -80,5 +88,3 @@
     }
 
 }
-
-
